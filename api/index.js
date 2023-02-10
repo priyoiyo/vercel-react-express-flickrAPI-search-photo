@@ -15,11 +15,8 @@ app.all('*', function(req, res, next) {
 });
 const flickrRoutes = require("./routes/flickr");
 
-app.use("/flickr", flickrRoutes);
+app.use("/api", flickrRoutes);
 
-app.get('*', function(req, res){
-  res.send({"status": "Forbidden", "code":404}, 404);
-});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

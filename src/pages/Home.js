@@ -16,36 +16,24 @@ const Home = ({searchTerm, isSearchAble, setIsSearchAble }) => {
 
   useEffect(() => {
     if (searchTerm && isSearchAble) {
-      axios.post(`http://localhost:8080/flickr`, { "tags": searchTerm }, {
-        headers: {
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Headers": "*",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*"
-        }
-      })
+      axios.post(`/api/flickr`, { "tags": searchTerm })
         .then((data) => {
           setList(data.data.data)
           setIsLoading(false);
           setIsSearchAble(false)
+          console.log('boom')
         })
         .catch(error => {
           console.log(error)
         })
 
     } else if (!searchTerm && !isSearchAble) {
-      axios.get('http://localhost:8080/flickr', {
-        headers: {
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Headers": "*",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*"
-        }
-      })
+      axios.get('/api/flickr')
         .then((data) => {
           setList(data.data.data)
           setIsLoading(false);
           setIsSearchAble(false)
+          console.log("hit")
           
         })
         .catch(error => {

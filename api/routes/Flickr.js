@@ -3,8 +3,8 @@ const router = express.Router();
 
 const { GetFlickrHome, PostFlickrByTag } = require("../controllers/Flickr");
 
-router.get("/", GetFlickrHome);
-router.post("/", PostFlickrByTag);
+router.get("/flickr", GetFlickrHome);
+router.post("/flickr", PostFlickrByTag);
 
 
 module.exports = router;
