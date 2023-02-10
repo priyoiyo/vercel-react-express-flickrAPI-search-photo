@@ -1,6 +1,6 @@
 # Getting Started with simple My Fullstack Proejct
 
-Im using node version 16.18.0 for Backend and React apps version 17.0.0 for Frontend apps
+Im using node version 18.14.0 for Backend and React apps version 18.2.0 for Frontend apps
 
 ## Requirement
 - NodeJs 18.14.0
